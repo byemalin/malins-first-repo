@@ -1,0 +1,76 @@
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: brown;
+}
+h2 {
+  font-family: cursive;
+  letter-spacing: 1cm;
+}
+.drake {
+  font-size: 70px;
+  color: green;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+body {
+  background-color: #4a412a;
+}
+
+.box {
+  background: url(image/path.jpg) 0 0 no-repeat,
+    url(image2/path.jpg) 100% 0 no-repeat;
+}
+ol {
+  text-align: center;
+  font-size: x-large;
+  color: blue;
+}
+.photo {
+  height: 40vh;
+  align-content: center;
+  animation: pulse 1s ease-in-out infinite;
+  position: absolute;
+}
+
+.red {
+  color: red;
+}
+
+.img-center {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  /*animation: pulse 1s alternate infinite ease-in;*/
+  transition: transform 2s linear;
+}
+
+.img-center:hover {
+  transform: scale(100);
+}
+.good {
+  font-family: monospace;
+}
+
+.bad {
+  font-family: fantasy;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.border {
+  background-color: blue;
+  padding: 5px;
+  border: 4px solid brown;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+}
+li {
+  text-shadow: 0 1px 0 white, 0 -1px 0 black, 1px 0 0 black, -1px 0 0 black;
+  color: yellow;
+  font-weight: 600;
+}
