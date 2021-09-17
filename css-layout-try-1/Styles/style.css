@@ -1,0 +1,112 @@
+/* styling website.com*/
+
+/*setting the font globally to all html*/
+html * {
+  font-family: "Inter", sans-serif;
+}
+
+/*Header*/
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 4vw;
+  padding-right: 6vw;
+  box-shadow: 0px 1px 3px grey;
+}
+a {
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}
+.hyperlink {
+  color: rgb(147, 147, 147);
+}
+#navright {
+  width: 20vw;
+  display: flex;
+  justify-content: space-between;
+}
+#home {
+  text-decoration: underline;
+  color: #f9426e;
+}
+
+/* making the divs side by side*/
+.flex-container {
+  height: 100vh;
+  display: flex;
+}
+.left {
+  flex: 1;
+}
+.right {
+  flex: 1;
+  background-color: #5e5d5d;
+}
+/* class 'website' to center the 'Website.com', 
+but you should apply the font size directly to <h1> tag */
+.website {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+h1 {
+  font-size: 70px;
+  font-weight: 600;
+}
+
+/* working on the right side of website.com*/
+h2 {
+  font-size: 50px;
+  font-weight: 400;
+}
+.whitetext {
+  color: white;
+}
+#purple {
+  color: #a39cd3;
+}
+p {
+  font-size: 30px;
+  font-weight: 300;
+}
+#webofyear {
+  padding-top: 3cm;
+  padding-left: 3cm;
+  padding-right: 3cm;
+}
+
+/* A LOT OF CARDS SITE*/
+
+#bodydiv {
+  background-color: coral;
+  height: 100vh;
+  width: 60vw;
+  display: flexbox;
+  margin: auto;
+  padding: 10px;
+}
+
+.allcards {
+  background-color: cornflowerblue;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+.singlecard {
+  background-color: darkgreen;
+  width: 30%;
+  height: 35%;
+  border-radius: 25px;
+}
+.card-text {
+  background-color: darkorchid;
+}
