@@ -1,0 +1,27 @@
+html * {
+  font-family: "Liu Jian Mao Cao", cursive;
+}
+#movements-title {
+  color: white;
+  font-weight: 50;
+}
+body {
+  background-color: rgb(40, 24, 13);
+}
+
+#map-image-div {
+  height: 100vh;
+}
+#map-image {
+  width: 100%;
+}
+
+.button {
+  background-color: aqua;
+}
+
+#button1 {
+  position: absolute;
+  top: 75vh;
+  left: 53.5vw;
+}
