@@ -1,27 +1,92 @@
 html * {
-  font-family: "Liu Jian Mao Cao", cursive;
+  font-family: arial;
 }
+
+/*FORMATTING HOME PAGE*/
+
+/*heading*/
 #movements-title {
-  color: white;
-  font-weight: 50;
+  color: rgb(40, 14, 0);
+  font-weight: 5;
+  font-size: 20px;
 }
 body {
-  background-color: rgb(40, 24, 13);
+  background-color: #392413;
 }
+
+/*Home page map-image configuration*/
 
 #map-image-div {
   height: 100vh;
+  position: relative;
 }
 #map-image {
   width: 100%;
-}
-
-.button {
-  background-color: aqua;
-}
-
-#button1 {
   position: absolute;
-  top: 75vh;
-  left: 53.5vw;
+}
+
+/*Defining animation for the buttons to pulse*/
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+/*Working on buttons*/
+
+/*this applies to all buttons:*/
+.button {
+  text-decoration: none;
+  z-index: 1;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+#italy-button {
+  position: absolute;
+  top: 36%;
+  left: 50%;
+}
+#paris-button {
+  position: absolute;
+  top: 31%;
+  left: 47%;
+}
+#nyc-button {
+  position: absolute;
+  top: 36%;
+  left: 25.5%;
+}
+#newport-button {
+  position: absolute;
+  top: 40%;
+  left: 13%;
+}
+#vegas-button {
+  position: absolute;
+  top: 37%;
+  left: 15%;
+}
+
+/*GAETA*/
+.cls-1 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 1s ease-in-out infinite;
+}
+#tooltip {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.3s ease-in-out;
+  background-color: rgb(133, 77, 40);
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border: 2px solid white;
+}
+#tooltip.show {
+  opacity: 1;
 }
