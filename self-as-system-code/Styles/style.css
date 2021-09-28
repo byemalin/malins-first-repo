@@ -72,11 +72,11 @@ body {
 }
 
 /*GAETA*/
-.cls-1 {
+/*.cls-1 {
   transform-origin: 50% 50%;
   transform-box: fill-box;
   animation: pulse 1s ease-in-out infinite;
-}
+}*/
 #tooltip {
   opacity: 0;
   position: absolute;
