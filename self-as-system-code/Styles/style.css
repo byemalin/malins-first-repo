@@ -90,3 +90,17 @@ body {
 #tooltip.show {
   opacity: 1;
 }
+
+/*PARIS*/
+
+.cls-195 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cls-196 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 1s ease-in-out infinite;
+}
