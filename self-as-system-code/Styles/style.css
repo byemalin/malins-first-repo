@@ -163,3 +163,73 @@ body {
   left: 45%;
   z-index: 1;
 }
+
+/*Newport*/
+
+.cls-34 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cls-35 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/*VEGAS*/
+
+.cls-133 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cls-132 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/*Rome*/
+
+.cls-244 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cls-243 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/*Gaeta*/
+
+.cls-34 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cls-33 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/*Naples*/
+
+.cls-52 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cls-53 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+  animation: pulse 2s ease-in-out infinite;
+}
