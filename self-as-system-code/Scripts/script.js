@@ -2,11 +2,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed');
 
 
-    let loc_1 = document.querySelector('#location-1');
+    //PARIS
+
+        //paris_4
+
+    let paris_hover_1 = document.querySelector('#paris_4');
     
-    console.log(loc_1)
-    loc_1.addEventListener("mouseover",respondMouseOver);
-    loc_1.addEventListener("mouseout", respondMouseOut);
+    console.log(paris_hover_1)
+    paris_hover_1.addEventListener("mouseover",respondMouseOver);
+    paris_hover_1.addEventListener("mouseout", respondMouseOut);
     
     function respondMouseOver(event) {
         
@@ -15,15 +19,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         console.log("WORK?")
         tooltip.classList.add('show');
-        const tooltipPara = tooltip.querySelector('p');
-        tooltipPara.innerText = "cycle to meet antonio"
+        const tooltipPara = tooltip.querySelector('#p');
+        tooltipPara.innerText = "Social Interaction"
         console.log(event.clientX, event.clientY);
+    }
 
     
-    }
     function respondMouseOut() {
         tooltip.classList.remove('show');
       }
-      
+
+
 });
 
