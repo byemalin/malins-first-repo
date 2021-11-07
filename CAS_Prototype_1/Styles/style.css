@@ -1,43 +1,67 @@
+/*                                                              MAIN STYLING */
+
+html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+.forbestitle {
+  text-align: center;
+}
 body {
-  background-color: black;
+  background-color: rgb(255, 255, 255);
 }
-
-#map {
+#maincontainer {
+  /* background-color: blue; */
+  display: flex;
   justify-content: center;
-  height: 100vh;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
 }
 
-#ZM.OJ {
-  fill: coral;
+/* #map {
+  display: flex;
+  justify-content: center;
+} */
+
+/* This didn't do anything lol^ I need to figure out how to make the map zoomable too */
+.map {
+  z-index: 0;
 }
-:root {
-  --c-size: 100px;
-  --b-size: 300px;
+svg {
+  width: 100%;
+  height: 100vh;
+  width: 100vw;
 }
+/*Keeps the svg within its div */
+
+/*                                                      STYLING THE TWO SIDE PANELS: */
 
 .frame {
-  width: 400px;
-  height: 100vh;
+  width: 20vw;
+  height: 90vh;
 
   position: absolute;
 
-  opacity: 50%;
+  opacity: 80%;
   display: flex;
   justify-content: center;
 
-  border-radius: 30px;
-  background-color: #fee9d0;
+  border-radius: 15px;
+  background-color: lightgrey;
   align-items: center;
 }
+
 #rightframe {
-  right: 0;
+  right: 30px;
 }
 
 #leftframe {
-  left: 0;
+  left: 30px;
 }
 
 .interior {
+  /* Needed an interior div, which has two more interior divs(upper and lower)*/
   height: 100%;
   width: 100%;
 }
@@ -45,11 +69,15 @@ body {
 .upper {
   width: 100%;
   height: 50%;
-
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
+#uppercircle {
+  /* Had to specify to centre the circle because when I applied it to 'upper' it messes up the list of billionaires.*/
+  align-items: center;
+  justify-content: center;
+}
+
 .lower {
   width: 100%;
   height: 50%;
@@ -59,28 +87,59 @@ body {
   align-items: center;
 }
 
-.circle {
-  background-color: red;
-  border-radius: 50%;
-  width: var(--c-size);
-  height: var(--c-size);
-  top: 30px;
-}
-.billCircle {
-  background-color: aqua;
-  border-radius: 50%;
-  width: var(--b-size);
-  height: var(--b-size);
-  top: 30px;
-}
+/* working on the list of billionaires*/
 
-#billionaires {
-  background-color: burlywood;
+#billionairesDIV {
+  /* background-color: burlywood; */
+  border-radius: 15px;
   width: 90%;
   margin: auto;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 46%;
+}
+#BillList {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+  list-style-position: inside;
+}
+ul li {
+  background: lightgrey;
+  border: 3px solid green;
+  text-align: center;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 15px;
+  align-items: center;
 }
 
 #graph {
   width: 90%;
   margin: auto;
+}
+
+/*                                                          STYLING AND DEFINING THE CIRCLES*/
+
+:root {
+  --country-size: 100px;
+  --bill-size: 300px;
+}
+
+.circle {
+  background-color: rgb(192, 0, 0);
+  border-radius: 50%;
+  width: var(--country-size);
+  height: var(--country-size);
+  top: 30px;
+}
+.billCircle {
+  background-color: green;
+  border-radius: 50%;
+  width: var(--bill-size);
+  height: var(--bill-size);
+  top: 30px;
 }

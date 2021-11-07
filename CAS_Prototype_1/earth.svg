@@ -1,60 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <!--CSS Linking-->
-    <link rel="stylesheet" href="Styles/style.css">
-
-    <!--Javascript Linking-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src = "Scripts/script.js"> type="text/javascript"</script>
-
-
-<script>
-   
-    </script>
-
-    <!--Tab Title-->
-    <title>City as a System</title>
-</head>
-
-<body>
-<div id="maincontainer">
-    <div class= "frame" id="rightframe">
-
-     <div class= "interior">
-         <div class="upper" id="uppercircle">
-           <div class= "circle"></div>
-          </div>
-           <div class="lower">
-            <div class= "billCircle"></div>
-          </div>
-         </div>
-        </div>
-
-    <div class= "frame" id="leftframe">
-        <div class= "interior">
-            <h2 class="forbestitle"><strong> Top Billionaires</strong></h2>
-            <h3 class="forbestitle"> 2002 - 2021</h3>
-            <div class="upper" id="billionairesDIV">
-                
-                  <ul id="BillList"></ul>
-                
-             </div>
-         <div class="lower" id="graph">
-            <iframe title="" aria-label="Interactive line chart" id="datawrapper-chart-wclCi" src="https://datawrapper.dwcdn.net/wclCi/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="445"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
-            </script>
-             </div>
-        </div>
-
-    </div>
-
-
-    <!--Map SVG-->
-    <div id="map">
-
-        <div id="mapSVG">
-            <?xml version="1.0"?>
+<?xml version="1.0"?>
 <!--
 *************Map created by Simplemaps.com********************		
 *************Attribution is highly appreciated!***************
@@ -1031,11 +975,3 @@ THE SOFTWARE.
  <circle cx="1798.2" cy="719.3" id="2">
  </circle>
 </svg>
-        </div>
-
-        </div>
-    </div>
-</div>
-</body>
-
-</html>
