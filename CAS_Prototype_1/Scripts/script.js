@@ -69,12 +69,7 @@ colorscale= d3.scaleLog().domain([737, 125000]).range(["black", "red"])
 
 sizescale= d3.scaleLinear().domain([4400000,23266768927430]).range([0, 500])
 
-
-
-
 GDPDataFiltered.map(d => {
-
-  
 
     let countrySVG = document.querySelector('#' + d.code2Digits)
 
@@ -97,8 +92,6 @@ GDPDataFiltered.map(d => {
         // document.documentElement.style.setProperty("--c-size", DataForZambia[0]["TotalGDP"])
         document.documentElement.style.setProperty("--country-size", sizescale(d.TotalGDP) + 'px')
     }
-    
-
 
     if(countrySVG){
         countrySVG.style.fill = colorscale(d.Value)
