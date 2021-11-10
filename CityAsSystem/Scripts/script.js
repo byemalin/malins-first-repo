@@ -73,7 +73,7 @@ people.map(d=> {
 
 
 // defining colorscale for heatmap
-colorscale= d3.scaleLog().domain([737, 125000]).range(["black", "red"])
+colorscale= d3.scaleLog().domain([737, 125000]).range(["rgb(47, 0, 0)", "red"])
 
 //defining size scale for circles
 
@@ -134,7 +134,7 @@ function handleZoom(e) {
     //lookup translate extent
 
   
-  d3.select('svg')
+  d3.select('#theMapSVG')
     .call(zoom);
 
 

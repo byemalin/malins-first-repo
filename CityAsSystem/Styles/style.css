@@ -1,8 +1,14 @@
 /*                                                              MAIN STYLING */
 
+@font-face {
+  font-family: myFirstFont;
+  src: url("digital-7.regular.ttf");
+}
+
 html {
   height: 100%;
   font-family: Arial, sans-serif;
+  /* font-family: myFirstFont; */
 }
 .forbestitle {
   text-align: center;
@@ -19,22 +25,16 @@ body {
   z-index: 1;
 }
 
-/* #map {
-  display: flex;
-  justify-content: center;
-} */
-
-/* This didn't do anything lol^ I need to figure out how to make the map zoomable too */
 .map {
   z-index: 0;
 }
-svg {
+#theMapSVG {
   width: 100%;
   height: 100vh;
   width: 100vw;
   z-index: 0;
 }
-/*Keeps the svg within its div */
+/*Keeps the svg within its div ^ */
 
 /*                                                      STYLING THE TWO SIDE PANELS: */
 
@@ -121,8 +121,14 @@ ul li {
 }
 
 #graph {
-  width: 90%;
-  margin: auto;
+  width: 95%;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+#graphSVG {
+  width: 100%;
+  height: 100%;
 }
 
 /*                                                          STYLING AND DEFINING THE CIRCLES*/
