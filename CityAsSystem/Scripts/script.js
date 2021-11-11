@@ -83,15 +83,30 @@ GDPDataFiltered.map(d => {
 
     let countrySVG = document.querySelector('#' + d.code2Digits)
 
-    console.log(document.querySelector('#AR'))
+
 
     function respondMouseOver(event) {
         countrySVG.style.opacity = "50%"
+
+        tooltip.style.top = event.clientY + 10 + 'px' ;
+        tooltip.style.left = event.clientX + 10 + 'px';
+         tooltip.classList.add('show');
+         const countryname = tooltip.querySelector('#CountryNamePopUp');
+         countryname.innerText = (d.Country)
+         const population = tooltip.querySelector('#CountryPopulation');
+         population.innerText = ("Population:" + d.population)
+         const perCapita = tooltip.querySelector('#GDPPerCapita');
+         perCapita.innerText = ("GDP per Capita:" + d.Value)
+
+          console.log(event.clientX, event.clientY);
+        console.log(GDPDataFiltered)
+
     
     }
     
     function respondMouseOut() {
         countrySVG.style.opacity = "100%"
+        tooltip.classList.remove('show');
 
        
     }

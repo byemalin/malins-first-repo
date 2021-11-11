@@ -14,7 +14,7 @@ html {
   text-align: center;
 }
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(27, 0, 0);
 }
 #maincontainer {
   /* background-color: blue; */
@@ -33,6 +33,9 @@ body {
   height: 100vh;
   width: 100vw;
   z-index: 0;
+}
+path {
+  filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
 }
 /*Keeps the svg within its div ^ */
 
@@ -154,4 +157,30 @@ ul li {
   width: var(--bill-size);
   height: var(--bill-size);
   top: 30px;
+}
+
+/* Working on country hover */
+
+#tooltip {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background: rgba(255, 0, 0, 0.616);
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: center;
+}
+#tooltip p {
+  padding: 0;
+  margin: 0;
+}
+#tooltip.show {
+  opacity: 1;
+}
+#CountryNamePopUp {
+  font-weight: bold;
+  color: white;
 }
