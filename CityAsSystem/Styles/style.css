@@ -14,7 +14,8 @@ html {
   text-align: center;
 }
 body {
-  background-color: rgb(27, 0, 0);
+  /* background-color: #a3a3a3; */
+  /* background-image: url("../Assets/img/bg_image.jpg"); */
 }
 #maincontainer {
   /* background-color: blue; */
@@ -27,6 +28,7 @@ body {
 
 .map {
   z-index: 0;
+  transform: scale(2);
 }
 #theMapSVG {
   width: 100%;
@@ -35,7 +37,7 @@ body {
   z-index: 0;
 }
 path {
-  filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
+  filter: drop-shadow(0 -0.3mm 0.3mm rgb(0, 0, 0));
 }
 /*Keeps the svg within its div ^ */
 
@@ -47,18 +49,19 @@ path {
 
   position: absolute;
 
-  opacity: 80%;
+  opacity: 1;
   display: flex;
   justify-content: center;
 
   border-radius: 15px;
-  background-color: lightgrey;
+  background-color: rgba(211, 211, 211, 0.294);
   align-items: center;
   z-index: 1;
 }
 
 #rightframe {
   right: 30px;
+  width: 600px;
 }
 
 #leftframe {
@@ -113,8 +116,8 @@ ul {
   list-style-position: inside;
 }
 ul li {
-  background: lightgrey;
-  border: 3px solid green;
+  background: rgba(211, 211, 211, 0.294);
+  border: 3px solid #8441ae;
   text-align: center;
   padding: 15px;
   margin: 10px;
@@ -137,27 +140,47 @@ ul li {
 /*                                                          STYLING AND DEFINING THE CIRCLES*/
 
 :root {
-  --country-size: 100px;
+  --country-size: 300px;
   --bill-size: 300px;
+  --pc-size: 100px;
 }
 
 .circle {
-  background-color: rgb(192, 0, 0);
+  background-color: #b26e3e;
+
   border: 2px solid black;
   border-radius: 50%;
   width: var(--country-size);
   height: var(--country-size);
   top: 30px;
   transition: all 0.5s ease;
+  opacity: 1;
+  z-index: 2;
 }
 .billCircle {
-  background-color: green;
+  background-color: #8441ae;
   border: 2px solid black;
   border-radius: 50%;
   width: var(--bill-size);
   height: var(--bill-size);
   top: 30px;
+  transition: all 0.5s ease;
 }
+
+/*         Experiment for adding another circle
+.pcCircle {
+  background-color: #3ea8b2;
+
+  border: 2px solid black;
+  border-radius: 50%;
+  width: var(--pc-size);
+  height: var(--pc-size);
+
+  transition: all 0.5s ease;
+  opacity: 1;
+  z-index: 3;
+  position: absolute;
+} */
 
 /* Working on country hover */
 
@@ -167,7 +190,7 @@ ul li {
   position: absolute;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
-  background: rgba(255, 0, 0, 0.616);
+  background: #b26e3e;
   transition: opacity 0.3s ease-in-out;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -182,5 +205,34 @@ ul li {
 }
 #CountryNamePopUp {
   font-weight: bold;
-  color: white;
+}
+
+body {
+  background-image: url(../Assets/img/bg_image.jpg);
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
+  border: 2px solid;
+}
+
+/* LAyout 2 */
+
+.l2_left {
+  background-color: #8441ae;
+  width: 20vw;
+  height: 90vh;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.l2_map {
+}
+
+.l2_bottom {
+}
+
+.exp {
+  background-color: blueviolet;
+  height: 400px;
+  width: 400px;
 }

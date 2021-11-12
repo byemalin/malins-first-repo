@@ -2,7 +2,7 @@
 window.addEventListener('DOMContentLoaded', async () => {
     console.log('DOM fully loaded and parsed');
 
-
+//GDP Data loading
 let GDPData= await d3.csv("Assets/data/GDPwithCC.csv", (d)=>{
     return d
 })
@@ -14,24 +14,21 @@ GDPDataFiltered = GDPData.filter(
 )
 
 
+// //Creating the list of billionaires add adding interactivity to list of names:
 
-
-
-
-// //Creating the list of billionaires:
-
+    //Forbes NAMES Dataloading
 async function summarisenames(){
     return await d3.csv("Assets/data/ForbesByName.csv", (d)=>{
         return d})
     
 }
 
-
 let ForbesByName = await summarisenames()
 
     let people = ForbesByName.map((d) => {
         return d[0];
       })
+
 
 var list = document.getElementById('BillList');
 
@@ -51,13 +48,13 @@ people.map(d=> {
         document.documentElement.style.setProperty("--bill-size", '200px')
     }
     function respondMouseOver(event) {
-        entry.style.background = "green"
+        entry.style.background = "#8441ae"
         entry.style.padding = "18px"
     
     }
     
     function respondMouseOut() {
-        entry.style.background = "lightgrey"
+        entry.style.background = "rgba(211, 211, 211, 0.294)"
         entry.style.padding = "15px"
        
     }
@@ -73,7 +70,7 @@ people.map(d=> {
 
 
 // defining colorscale for heatmap
-colorscale= d3.scaleLog().domain([737, 125000]).range(["rgb(47, 0, 0)", "red"])
+colorscale= d3.scaleLog().domain([737, 125000]).range(["#160a01", "hsl(25, 100%, 93%)"])
 
 //defining size scale for circles
 
@@ -97,11 +94,6 @@ GDPDataFiltered.map(d => {
          population.innerText = ("Population:" + d.population)
          const perCapita = tooltip.querySelector('#GDPPerCapita');
          perCapita.innerText = ("GDP per Capita:" + d.Value)
-
-          console.log(event.clientX, event.clientY);
-        console.log(GDPDataFiltered)
-
-    
     }
     
     function respondMouseOut() {
@@ -114,6 +106,10 @@ GDPDataFiltered.map(d => {
         // document.documentElement.style.setProperty("--c-size", DataForZambia[0]["TotalGDP"])
         
         document.documentElement.style.setProperty("--country-size", sizescale(d.TotalGDP) + 'px')
+        console.log(d.Value * 100000000000000000000)
+
+        //Experimenting with adding another circle
+        // document.documentElement.style.setProperty("--pc-size", sizescale(d.Value *100000000) + 'px')
     }
 
     if(countrySVG){
@@ -130,6 +126,17 @@ GDPDataFiltered.map(d => {
 })
 
 
+//scaling the forbes networth data so it's in billions
+
+
+ForbesByName.map(d=>{
+    // console.log(d[1])
+})
+
+
+
+
+
 
 
 
@@ -143,14 +150,23 @@ function handleZoom(e) {
   let zoom = d3.zoom()
     .on('zoom', handleZoom)
 
-    .scaleExtent([1, 2])
+    .scaleExtent([2, 3])
     .translateExtent([[0,0], [8000,8000]]);
-
-    //lookup translate extent
-
   
   d3.select('#theMapSVG')
     .call(zoom);
 
+
+
+
+
+
+//Workin on the graph with chart js
+
+// const CHART = document.getElementById("lineChart")
+
+// console.log(CHART)
+
+// let lineChart = new Chart
 
 }); //Close DOM
