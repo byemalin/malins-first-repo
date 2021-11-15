@@ -8,7 +8,24 @@
 html {
   height: 100%;
   font-family: Arial, sans-serif;
+  filter: contrast(110%);
+  /* filter: drop-shadow(16px 16px 20px red) invert(75%); */
+  /* filter: hue-rotate(100deg); */
+  /* filter: invert(50); */
   /* font-family: myFirstFont; */
+}
+#svgzoom {
+  /* transform: scale(3);
+  transform: translate(0px, 540px); */
+
+  /* transform: translate(-1985.4089404592341, -608.2507001387013) scale(2); */
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 25px;
+  margin: 0;
 }
 .forbestitle {
   text-align: center;
@@ -38,6 +55,7 @@ body {
 }
 path {
   filter: drop-shadow(0 -0.3mm 0.3mm rgb(0, 0, 0));
+  /* filter: blur(0.5px); */
 }
 /*Keeps the svg within its div ^ */
 
@@ -124,6 +142,8 @@ ul li {
   border-radius: 15px;
   align-items: center;
   transition: all 0.2s ease;
+  box-shadow: 0px 1px 3px rgb(70, 70, 70);
+  font-size: 25px;
 }
 
 #graph {
@@ -143,6 +163,7 @@ ul li {
   --country-size: 300px;
   --bill-size: 300px;
   --pc-size: 100px;
+  --blur-size: calc(0.5 * var(--pc-size));
 }
 
 .circle {
@@ -167,15 +188,15 @@ ul li {
   transition: all 0.5s ease;
 }
 
-/*         Experiment for adding another circle
-.pcCircle {
-  background-color: #3ea8b2;
-
+/* Experiment for adding another circle */
+/* .pcCircle {
+  background-color: #cacaca;
+  opacity: 0.2;
   border: 2px solid black;
   border-radius: 50%;
   width: var(--pc-size);
   height: var(--pc-size);
-
+  filter: blur(25px);
   transition: all 0.5s ease;
   opacity: 1;
   z-index: 3;
@@ -232,7 +253,7 @@ body {
 }
 
 .exp {
-  background-color: blueviolet;
-  height: 400px;
-  width: 400px;
+  /* background-color: blueviolet; */
+  height: 350px;
+  width: 350px;
 }

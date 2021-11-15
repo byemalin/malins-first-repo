@@ -17,13 +17,20 @@ GDPDataFiltered = GDPData.filter(
 // //Creating the list of billionaires add adding interactivity to list of names:
 
     //Forbes NAMES Dataloading
-async function summarisenames(){
-    return await d3.csv("Assets/data/ForbesByName.csv", (d)=>{
+
+    // Taking only the most recent value for each person
+
+
+async function mostrecent(){
+    return await d3.json("Assets/data/ForbesbyName.json", (d)=>{
         return d})
-    
 }
 
-let ForbesByName = await summarisenames()
+let ForbesByName = await mostrecent()
+
+console.log(ForbesByName)
+
+
 
     let people = ForbesByName.map((d) => {
         return d[0];
@@ -74,6 +81,9 @@ colorscale= d3.scaleLog().domain([737, 125000]).range(["#160a01", "hsl(25, 100%,
 
 //defining size scale for circles
 
+
+
+
 sizescale= d3.scaleLinear().domain([4400000,23266768927430]).range([0, 500])
 
 GDPDataFiltered.map(d => {
@@ -109,7 +119,7 @@ GDPDataFiltered.map(d => {
         console.log(d.Value * 100000000000000000000)
 
         //Experimenting with adding another circle
-        // document.documentElement.style.setProperty("--pc-size", sizescale(d.Value *100000000) + 'px')
+        // document.documentElement.style.setProperty("--pc-size", sizescale(d.TotalGDP*0.7) + 'px')
     }
 
     if(countrySVG){
@@ -126,16 +136,14 @@ GDPDataFiltered.map(d => {
 })
 
 
-//scaling the forbes networth data so it's in billions
-
-
-ForbesByName.map(d=>{
-    // console.log(d[1])
-})
 
 
 
 
+
+
+
+//  
 
 
 
@@ -150,7 +158,7 @@ function handleZoom(e) {
   let zoom = d3.zoom()
     .on('zoom', handleZoom)
 
-    .scaleExtent([2, 3])
+    .scaleExtent([1, 5])
     .translateExtent([[0,0], [8000,8000]]);
   
   d3.select('#theMapSVG')
@@ -163,10 +171,22 @@ function handleZoom(e) {
 
 //Workin on the graph with chart js
 
-// const CHART = document.getElementById("lineChart")
+const CHART = document.getElementById("lineChart")
 
-// console.log(CHART)
+console.log(CHART)
 
-// let lineChart = new Chart
+let lineChart = new Chart(CHART,{
+    type: 'line',
+    data: {
+        // labels: labels,
+        datasets: [{
+          label: 'My First Dataset',
+          data: [0, 10, 5, 2, 20, 30, 45],
+          fill: false,
+          borderColor: 'red',
+          tension: 0.1
+        }]
+      }
+});
 
 }); //Close DOM
