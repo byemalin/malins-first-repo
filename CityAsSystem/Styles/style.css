@@ -75,11 +75,16 @@ path {
   background-color: rgba(211, 211, 211, 0.294);
   align-items: center;
   z-index: 1;
+
+  overflow: visible;
+  overflow-x: visible;
 }
 
 #rightframe {
   right: 30px;
   width: 600px;
+  overflow: visible;
+  overflow-x: visible;
 }
 
 #leftframe {
@@ -96,12 +101,16 @@ path {
   width: 100%;
   height: 50%;
   display: flex;
+  overflow: visible;
+  overflow-x: visible;
 }
 
 #uppercircle {
   /* Had to specify to centre the circle because when I applied it to 'upper' it messes up the list of billionaires.*/
   align-items: center;
   justify-content: center;
+  overflow: visible;
+  overflow-x: visible;
 }
 
 .lower {
@@ -136,6 +145,7 @@ ul {
 ul li {
   background: rgba(211, 211, 211, 0.294);
   border: 3px solid #8441ae;
+
   text-align: center;
   padding: 15px;
   margin: 10px;
@@ -148,8 +158,8 @@ ul li {
 
 #graph {
   width: 95%;
-  margin-bottom: 40px;
-  padding: 20px;
+  /* margin-bottom: 50px; */
+  /* padding: 20px; */
 }
 
 #graphSVG {
@@ -167,25 +177,45 @@ ul li {
 }
 
 .circle {
-  background-color: #b26e3e;
+  /* background-color: #b26e3e; */
+  /* background-image: url(../Assets/img/money.jpeg); */
+  background-repeat: no-repeat;
+  /* filter: grayscale(80%); */
 
   border: 2px solid black;
-  border-radius: 50%;
+  border-radius: 100%;
   width: var(--country-size);
   height: var(--country-size);
   top: 30px;
   transition: all 0.5s ease;
   opacity: 1;
   z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  filter: drop-shadow(0 1mm 1mm rgb(0, 0, 0));
+}
+.papertexture {
+  object-fit: cover;
+  opacity: 1;
+  border-radius: 100%;
+  /* filter: contrast(150%); */
 }
 .billCircle {
-  background-color: #8441ae;
+  /* background-color: #8441ae; */
   border: 2px solid black;
-  border-radius: 50%;
+  border-radius: 100%;
   width: var(--bill-size);
   height: var(--bill-size);
   top: 30px;
   transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  filter: drop-shadow(0 1mm 1mm rgb(0, 0, 0));
 }
 
 /* Experiment for adding another circle */
@@ -211,7 +241,8 @@ ul li {
   position: absolute;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
-  background: #b26e3e;
+  background-image: url(../Assets/img/paper.jpg);
+  background-size: 100%;
   transition: opacity 0.3s ease-in-out;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -231,8 +262,8 @@ ul li {
 body {
   background-image: url(../Assets/img/bg_image.jpg);
   background-size: 100%;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   border: 2px solid;
 }
 

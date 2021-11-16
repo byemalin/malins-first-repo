@@ -39,8 +39,12 @@ console.log(ForbesByName)
 
 var list = document.getElementById('BillList');
 
-people.map(d=> {
-    var Billname = d
+// sizescale= d3.scaleLinear().domain([4400000,23266768927430]).range([0, 500])
+sizescale= d3.scaleLinear().domain([0, 1000000000,200000000000, 24000000000000]).range([0, 2, 500, 1000])
+// 1 billion to 20 trillion = 20000000000000
+
+ForbesByName.map(d=> {
+    var Billname = d[0]
     var entry = document.createElement('li');
     entry.appendChild(document.createTextNode(Billname));
     list.appendChild(entry);
@@ -52,7 +56,11 @@ people.map(d=> {
 
     function respondClick(event) {
         // document.documentElement.style.setProperty("--c-size", DataForZambia[0]["TotalGDP"])
-        document.documentElement.style.setProperty("--bill-size", '200px')
+        var NET = d[1][0]["net_worth"] * 1000000000
+        document.documentElement.style.setProperty("--bill-size", sizescale(NET) + "px")
+        
+        
+        console.log(sizescale(NET) + "px")
     }
     function respondMouseOver(event) {
         entry.style.background = "#8441ae"
@@ -68,6 +76,35 @@ people.map(d=> {
 
 
 })
+// people.map(d=> {
+//     var Billname = d
+//     var entry = document.createElement('li');
+//     entry.appendChild(document.createTextNode(Billname));
+//     list.appendChild(entry);
+
+
+//     entry.addEventListener("click", respondClick);
+//     entry.addEventListener("mouseover", respondMouseOver);
+//     entry.addEventListener("mouseout", respondMouseOut);
+
+//     function respondClick(event) {
+//         // document.documentElement.style.setProperty("--c-size", DataForZambia[0]["TotalGDP"])
+//         document.documentElement.style.setProperty("--bill-size", '200px')
+//     }
+//     function respondMouseOver(event) {
+//         entry.style.background = "#8441ae"
+//         entry.style.padding = "18px"
+    
+//     }
+    
+//     function respondMouseOut() {
+//         entry.style.background = "rgba(211, 211, 211, 0.294)"
+//         entry.style.padding = "15px"
+       
+//     }
+
+
+// })
       
 
     
@@ -77,14 +114,15 @@ people.map(d=> {
 
 
 // defining colorscale for heatmap
-colorscale= d3.scaleLog().domain([737, 125000]).range(["#160a01", "hsl(25, 100%, 93%)"])
+
+colorscale= d3.scaleLog().domain([0, 500, 50000, 125000]).range(["red", "#160a01", "hsl(25, 100%, 93%)", "#9d00ff"])
 
 //defining size scale for circles
 
 
 
 
-sizescale= d3.scaleLinear().domain([4400000,23266768927430]).range([0, 500])
+
 
 GDPDataFiltered.map(d => {
 
@@ -115,6 +153,8 @@ GDPDataFiltered.map(d => {
     function respondClick(event) {
         // document.documentElement.style.setProperty("--c-size", DataForZambia[0]["TotalGDP"])
         
+        console.log("THIS", sizescale(d.TotalGDP), d.TotalGDP)
+
         document.documentElement.style.setProperty("--country-size", sizescale(d.TotalGDP) + 'px')
         console.log(d.Value * 100000000000000000000)
 
