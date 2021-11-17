@@ -14,6 +14,30 @@ html {
   /* filter: invert(50); */
   /* font-family: myFirstFont; */
 }
+
+.KeyDiv {
+  height: 18vh;
+  width: 30vw;
+  /* background-color: aqua; */
+  position: absolute;
+  bottom: 68px;
+  display: flex;
+  justify-content: center;
+}
+#KeyInterior {
+  width: 90%;
+  height: 50%;
+  /* background-color: brown; */
+  bottom: 0;
+}
+#INFO {
+  opacity: 0;
+}
+
+#INFO.show {
+  opacity: 1;
+}
+
 #svgzoom {
   /* transform: scale(3);
   transform: translate(0px, 540px); */
@@ -144,7 +168,7 @@ ul {
 }
 ul li {
   background: rgba(211, 211, 211, 0.294);
-  border: 3px solid #8441ae;
+  border: 3px solid #673280;
 
   text-align: center;
   padding: 15px;
@@ -156,8 +180,14 @@ ul li {
   font-size: 25px;
 }
 
+#nopadding {
+  padding: 0;
+  height: 400px;
+}
+
 #graph {
   width: 95%;
+  height: 100%;
   /* margin-bottom: 50px; */
   /* padding: 20px; */
 }
@@ -264,7 +294,6 @@ body {
   background-size: 100%;
   width: 100%;
   height: 100%;
-  border: 2px solid;
 }
 
 /* LAyout 2 */
@@ -283,8 +312,8 @@ body {
 .l2_bottom {
 }
 
-.exp {
-  /* background-color: blueviolet; */
+/* .exp {
+
   height: 350px;
   width: 350px;
-}
+} */

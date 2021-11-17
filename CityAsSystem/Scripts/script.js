@@ -28,8 +28,6 @@ async function mostrecent(){
 
 let ForbesByName = await mostrecent()
 
-console.log(ForbesByName)
-
 
 
     let people = ForbesByName.map((d) => {
@@ -40,8 +38,14 @@ console.log(ForbesByName)
 var list = document.getElementById('BillList');
 
 // sizescale= d3.scaleLinear().domain([4400000,23266768927430]).range([0, 500])
-sizescale= d3.scaleLinear().domain([0, 1000000000,200000000000, 24000000000000]).range([0, 2, 500, 1000])
+sizescale= d3.scaleLinear().domain([0, 1000000000,200000000000, 24000000000000]).range([0, 2, 500, 2000])
+
 // 1 billion to 20 trillion = 20000000000000
+
+
+
+
+
 
 ForbesByName.map(d=> {
     var Billname = d[0]
@@ -54,16 +58,56 @@ ForbesByName.map(d=> {
     entry.addEventListener("mouseover", respondMouseOver);
     entry.addEventListener("mouseout", respondMouseOut);
 
-    function respondClick(event) {
+    async function respondClick(event) {
         // document.documentElement.style.setProperty("--c-size", DataForZambia[0]["TotalGDP"])
         var NET = d[1][0]["net_worth"] * 1000000000
         document.documentElement.style.setProperty("--bill-size", sizescale(NET) + "px")
+
+        graphingdata = []
+        graphyears=[]
+
+         d[1].map(y => {
+              // console.log("y", y["net_worth"])
+              graphingdata.push(
+               y["net_worth"]
+          )
+          graphyears.push(y["year"])
+         })
+
+        console.log(d[0], graphingdata)
+
         
+
+        let CHART = document.getElementById("lineChart")
         
-        console.log(sizescale(NET) + "px")
+        let lineChart = new Chart(CHART,{
+        type: 'line',
+        data: {
+        labels: graphyears.reverse(),
+        datasets: [{
+        label: 'Net Worth ($ Billions)',
+        data: graphingdata.reverse(),
+        fill: false,
+        borderColor: '#673280',
+        hoverBackgroundColor: "rgba(232,105,90,0.8)",
+        hoverBorderColor: "orange",
+        color: "pink",
+        tension: 0.1,
+        backgroundColor: "rgba(75,72,192,0.4)"
+        }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false   
+                 } } } 
+                 
+        });
+
     }
+
     function respondMouseOver(event) {
-        entry.style.background = "#8441ae"
+        entry.style.background = "#673280"
         entry.style.padding = "18px"
     
     }
@@ -74,39 +118,30 @@ ForbesByName.map(d=> {
        
     }
 
-
 })
-// people.map(d=> {
-//     var Billname = d
-//     var entry = document.createElement('li');
-//     entry.appendChild(document.createTextNode(Billname));
-//     list.appendChild(entry);
 
 
-//     entry.addEventListener("click", respondClick);
-//     entry.addEventListener("mouseover", respondMouseOver);
-//     entry.addEventListener("mouseout", respondMouseOut);
-
-//     function respondClick(event) {
-//         // document.documentElement.style.setProperty("--c-size", DataForZambia[0]["TotalGDP"])
-//         document.documentElement.style.setProperty("--bill-size", '200px')
-//     }
-//     function respondMouseOver(event) {
-//         entry.style.background = "#8441ae"
-//         entry.style.padding = "18px"
-    
-//     }
-    
-//     function respondMouseOut() {
-//         entry.style.background = "rgba(211, 211, 211, 0.294)"
-//         entry.style.padding = "15px"
-       
-//     }
 
 
-// })
-      
 
+        
+
+// const CHART = document.getElementById("lineChart")
+
+// let lineChart = new Chart(CHART,{
+//     type: 'line',
+//     data: {
+//         labels: ["2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"],
+//         datasets: [{
+//           label: 'Net Worth ($)',
+//           data: [0, 10, 5, 2, 20, 30, 45],
+//           fill: false,
+//           borderColor: 'red',
+//           tension: 0.1,
+//           backgroundColor: "rgba(75,72,192,0.4)"
+//         }]
+//       }
+// });
     
 
 
@@ -115,7 +150,7 @@ ForbesByName.map(d=> {
 
 // defining colorscale for heatmap
 
-colorscale= d3.scaleLog().domain([0, 500, 50000, 125000]).range(["red", "#160a01", "hsl(25, 100%, 93%)", "#9d00ff"])
+colorscale= d3.scaleLog().domain([200, 1200, 45000, 100000]).range(["#F45866", "#301d0f", "hsl(25, 100%, 93%)", "#9d00ff"])
 
 //defining size scale for circles
 
@@ -153,10 +188,10 @@ GDPDataFiltered.map(d => {
     function respondClick(event) {
         // document.documentElement.style.setProperty("--c-size", DataForZambia[0]["TotalGDP"])
         
-        console.log("THIS", sizescale(d.TotalGDP), d.TotalGDP)
+
 
         document.documentElement.style.setProperty("--country-size", sizescale(d.TotalGDP) + 'px')
-        console.log(d.Value * 100000000000000000000)
+
 
         //Experimenting with adding another circle
         // document.documentElement.style.setProperty("--pc-size", sizescale(d.TotalGDP*0.7) + 'px')
@@ -211,22 +246,63 @@ function handleZoom(e) {
 
 //Workin on the graph with chart js
 
-const CHART = document.getElementById("lineChart")
+//Also adding forbes data
 
-console.log(CHART)
 
-let lineChart = new Chart(CHART,{
-    type: 'line',
-    data: {
-        // labels: labels,
-        datasets: [{
-          label: 'My First Dataset',
-          data: [0, 10, 5, 2, 20, 30, 45],
-          fill: false,
-          borderColor: 'red',
-          tension: 0.1
-        }]
-      }
-});
+console.log("F", ForbesByName)
+
+
+ForbesByName.map(d=> {
+    
+// console.log("d", d)
+// ledayta = []
+
+//     d[1].map(y => {
+//         // console.log("y", y["net_worth"])
+//         ledayta.push(
+//             y["net_worth"]
+//         )
+//     })
+
+//     console.log(d[0], ledayta)
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Adding the hover to the key:
+
+const info = document.getElementById("INFO")
+const key = document.getElementById("KEY")
+
+key.addEventListener("mouseover", respondMouseOver);
+key.addEventListener("mouseout", respondMouseOut);
+
+
+function respondMouseOver(event) {
+     info.classList.add('show');
+}
+function respondMouseOut(event) {
+    info.classList.remove('show');
+}
+
+
+
+
+
+
 
 }); //Close DOM
