@@ -1,0 +1,28 @@
+body {
+  background-color: blue;
+  /* display: flex;
+  align-content: center;
+  justify-content: center; */
+}
+.mainframe {
+  height: 100vh;
+  width: 100%;
+  background-color: chocolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frame {
+  height: 90vh;
+  width: 40vw;
+  background-color: chartreuse;
+}
+
+.web2 {
+  width: 90%;
+  height: 40vh;
+  margin: auto;
+  margin-top: 3vh;
+  background-color: red;
+}

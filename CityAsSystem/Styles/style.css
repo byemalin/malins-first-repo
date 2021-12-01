@@ -231,6 +231,7 @@ ul li {
   object-fit: cover;
   opacity: 1;
   border-radius: 100%;
+  z-index: 1;
   /* filter: contrast(150%); */
 }
 .billCircle {
@@ -285,7 +286,33 @@ ul li {
 #tooltip.show {
   opacity: 1;
 }
+
+#BillCircletooltip {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-image: url(../Assets/img/paper.jpg);
+  background-size: 100%;
+  transition: opacity 0.3s ease-in-out;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: center;
+  z-index: 3;
+}
+#BillCircletooltip p {
+  padding: 0;
+  margin: 0;
+}
+#BillCircletooltip.show {
+  opacity: 1;
+}
+
 #CountryNamePopUp {
+  font-weight: bold;
+}
+#NamePopUp {
   font-weight: bold;
 }
 
